@@ -8,7 +8,7 @@
 // variables
 let neopixelStrip: neopixel.Strip = null
 
-// clearing screen
+// cleanup
 basic.clearScreen()
 neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
@@ -18,28 +18,27 @@ neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
+// shows traffic lights 
 input.onButtonPressed(Button.A, function () {
-  // displays green neopixel light
+  // green Light
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.show()
-  basic.pause(2000)
+  neopixelStrip.show() 
+  basic.pause(2000)    
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black)) 
   
-  // displays yellow neopixel light
+  // yellow Light
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.show()
-  basic.pause(2000)
+  neopixelStrip.show() 
+  basic.pause(2000)    
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black)) 
 
-  // displays red neopixel light
+  // red Light
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.show()
+  neopixelStrip.show() 
   basic.pause(2000)
-  basic.showIcon(IconNames.Happy)
 })
 
-// refreshing screen
+// clearing screen
 input.onButtonPressed(Button.B, function () {
   basic.showIcon(IconNames.SmallDiamond)
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
