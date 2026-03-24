@@ -2,49 +2,37 @@
  *
  * Created by: Kyle Matthew
  * Created on: Mar 2026
- * This program displays trafficlights using Neopixels.
+ * This program displays traffic lights using Neopixels.
 */
 
 // variables
 let neopixelStrip: neopixel.Strip = null
 
-// cleanup
+// Setup: clearing screen and initializing strip
 basic.clearScreen()
 neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
-neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.clear()
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
-// shows traffic lights 
 input.onButtonPressed(Button.A, function () {
-  // green Light
+  // displays green neopixel light
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
-  neopixelStrip.show() 
-  basic.pause(2000)    
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black)) 
-  
-  // yellow Light
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
-  neopixelStrip.show() 
-  basic.pause(2000)    
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black)) 
-
-  // red Light
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-  neopixelStrip.show() 
+  neopixelStrip.show()
   basic.pause(2000)
-})
+  
+  // displays yellow neopixel light
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
+  neopixelStrip.show()
+  basic.pause(2000)
 
-// clearing screen
-input.onButtonPressed(Button.B, function () {
-  basic.showIcon(IconNames.SmallDiamond)
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+  // displays red neopixel light
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.show()
+  basic.pause(2000)
+
+  // clear lights to reset for next cycle
+  neopixelStrip.clear()
   neopixelStrip.show()
   basic.showIcon(IconNames.Happy)
 })
