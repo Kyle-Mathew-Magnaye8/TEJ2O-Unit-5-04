@@ -1,22 +1,34 @@
 {
-    "name": "TEJ2O ⇢ Unit #X-YY",
+    "name": "TEJ2O ⇢ Unit #5-04",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
     },
     "files": [
         "main.ts",
         "README.md"
     ],
     "targetVersions": {
-        "target": "8.0.11",
+        "target": "8.0.18",
         "targetId": "microbit"
     },
     "supportedTargets": [
         "microbit"
     ],
     "preferredEditor": "tsprj",
-    "languageRestriction": "javascript-only"
+    "languageRestriction": "javascript-only",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "open": 0,
+                    "whitelist": 1,
+                    "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
+                }
+            }
+        }
+    }
 }
