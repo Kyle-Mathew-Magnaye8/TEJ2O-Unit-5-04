@@ -19,16 +19,19 @@ input.onButtonPressed(Button.A, function () {
   // displays green neopixel light
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
   neopixelStrip.show()
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
   basic.pause(2000)
   
   // displays yellow neopixel light
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
   neopixelStrip.show()
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
   basic.pause(2000)
 
   // displays red neopixel light
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
   neopixelStrip.show()
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
   basic.pause(2000)
 
   // clear lights to reset for next cycle
