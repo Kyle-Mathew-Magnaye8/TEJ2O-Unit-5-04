@@ -40,6 +40,3 @@ while True:
 
         # reset UI
         display.show(Image.HAPPY)
-    
-    # sleep to save battery power
-    sleep(10)
