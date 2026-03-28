@@ -8,35 +8,35 @@ from microbit import *
 import neopixel
 
 # setup
-np = neopixel.NeoPixel(pin16, 4)
+neopixels = neopixel.NeoPixel(pin16, 4)
 
 # clear the strip and show a happy face
-np.clear()
+neopixels.clear()
 display.show(Image.HAPPY)
 
 while True:
     # check if button A was pressed
     if button_a.was_pressed():
         # green light (Pixel 0)
-        np[0] = (0, 255, 0)
-        np.show()
+        neopixels[0] = (0, 255, 0)
+        neopixels.show()
         sleep(2000)
-        np[0] = (0, 0, 0)
-        np.show()
+        neopixels[0] = (0, 0, 0)
+        neopixels.show()
 
         # yellow light (Pixel 1)
-        np[1] = (255, 255, 0)
-        np.show()
+        neopixels[1] = (255, 255, 0)
+        neopixels.show()
         sleep(2000)
-        np[1] = (0, 0, 0)
-        np.show()
+        neopixels[1] = (0, 0, 0)
+        neopixels.show()
 
         # red light (Pixel 2)
-        np[2] = (255, 0, 0)
-        np.show()
+        neopixels[2] = (255, 0, 0)
+        neopixels.show()
         sleep(2000)
-        np[2] = (0, 0, 0)
-        np.show()
+        neopixels[2] = (0, 0, 0)
+        neopixels.show()
 
         # reset UI
         display.show(Image.HAPPY)
